@@ -22,7 +22,10 @@ export const login = async (req, res) => {
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
-    return res.json({ success: true });
+    return res.json({
+      success: true,
+      token: user.token,
+    });
   } catch (err) {
     return res.status(401).json({
       message: "Sai tài khoản hoặc mật khẩu",
