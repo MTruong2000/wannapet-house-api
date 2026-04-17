@@ -4,6 +4,7 @@ import { createServiceBooking } from "../controllers/users/service-booking.contr
 import { getServicesByLocation } from "../controllers/users/service.controller.js";
 import { getCategoriesWithProducts } from "../controllers/users/category-product.controller.js";
 import { getContentBlockForFrontend } from "../controllers/users/content-block.controller.js";
+import { searchHeaderItems } from "../controllers/users/search.controller.js";
 import {
   getProductDetail,
   getProductsByCategoryAndLocation,
@@ -20,6 +21,8 @@ router.get("/products", getProductsByCategoryAndLocation);
 router.get("/product-detail", getProductDetail);
 router.get("/recent-products", getRecentProductsBySKU);
 router.get("/products-by-category", getCategoriesWithProducts);
+
+router.get("/search", searchHeaderItems);
 
 router.post("/create-booking", createServiceBooking);
 
